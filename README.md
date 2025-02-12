@@ -11,7 +11,7 @@
 
 In this experiment, we compared \texttt{RIPOST} with another generative method, PrivSyn, which improves upon the work done in PrivBayes. PrivSyn has high computational complexity, making it infeasible to scale to all tests conducted in the main experiments of this paper. To compare it with \texttt{RIPOST}, we performed experiments on a set of tensors with dimensions ranging from 2D to 6D using the Adult dataset, each with its own workload of 100 queries.
 
-![alt text](https://github.com/RIPOST/RIPOST/blob/main/edbt-privsyn-adult.jpg?raw=true)
+![alt text](https://github.com/AlaEddineLaouir/RIPOST/blob/main/edbt-privsyn-adult.jpg?raw=true)
 
 From the above figure, we observe that PrivSyn exhibits performance similar to PrivBayes. This is because these generative solutions do not take into account the \textit{Measure} attribute and are primarily optimized for tabular data rather than multidimensional tensors. Additionally, we notice that PrivSyn's performance improves as the number of dimensions increases. This is due to fewer splits being performed, which causes the values in the \textit{Measure} attribute to become smaller and closer to 0/1, reducing its impact.
 
@@ -26,7 +26,7 @@ In this experiment, we examine the performance of \texttt{RIPOST} compared to SL
 
 SLIMView can operate with or without a predefined workload. We refer to the version with a workload as \texttt{SLIMView}, and the version without a workload as \texttt{SLIMView-WW}. We conducted experiments using the Adult dataset, generating tensors and workloads with dimensions ranging from 2D to 6D—the same ones used in our main experiments. The comparative results are shown in the following Figure.
 
-![alt text](https://github.com/RIPOST/RIPOST/blob/main/edbt-slim-adult.jpg?raw=true)
+![alt text](https://github.com/AlaEddineLaouir/RIPOST/blob/main/edbt-slim-adult.jpg?raw=true)
 
 We observe that \texttt{RIPOST} outperforms both \texttt{SLIMView} and \texttt{SLIMView-WW} in the tests conducted on 2D, 3D, and 4D tensors. However, it falls behind in the 5D and 6D tests. This is due to the higher number of dimensions resulting in less aggregation, which causes the values in the cells to become smaller. Since \texttt{SLIMView} (and \texttt{SLIMView-WW}) uses sampling on non-empty cells, the error from sampling decreases as the values in these cells get smaller.
 
